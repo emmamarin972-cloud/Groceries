@@ -132,7 +132,7 @@ export default function App() {
                       <span className="w-full h-[2px] bg-gradient-to-r from-slate-700/50 to-transparent inline-block rounded-full"></span>
                     </h2>
                     
-                    <div className="grid gap-3">
+                    <div className="grid grid-cols-2 gap-4">
                       <AnimatePresence>
                         {visibleItems.map((item, idx) => {
                           const itemKey = `${category}-${item.item}`;
@@ -148,31 +148,31 @@ export default function App() {
                               key={itemKey} 
                               onClick={() => toggleItem(category, item.item)}
                               className={`
-                                cursor-pointer group flex items-center justify-between p-4 rounded-3xl border transition-all duration-300
+                                relative cursor-pointer group flex flex-col items-center justify-center p-6 h-48 rounded-[2rem] border transition-all duration-300 text-center
                                 ${isAcquired 
-                                  ? 'bg-emerald-500/5 border-emerald-500/20 opacity-60 hover:opacity-100' 
-                                  : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-indigo-500/30'}
+                                  ? 'bg-emerald-500/10 border-emerald-500/30 opacity-70 hover:opacity-100' 
+                                  : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-indigo-500/50 shadow-lg hover:shadow-indigo-500/20 active:scale-95'}
                               `}
                             >
-                              <div className="flex items-center gap-4">
-                                <span className={`text-3xl transition-transform duration-300 ${isAcquired ? 'scale-90 grayscale opacity-50' : 'group-hover:scale-110'}`}>
-                                  {item.emoji}
-                                </span>
-                                <div>
-                                  <p className={`font-bold transition-colors text-base ${isAcquired ? 'text-emerald-400 line-through' : 'text-slate-100 group-hover:text-white'}`}>
-                                    {item.item}
-                                  </p>
-                                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-0.5">
-                                    {item.quantity} {item.unit}
-                                  </p>
-                                </div>
-                              </div>
-                              <div className="flex items-center justify-center p-2">
+                              <div className="absolute top-4 right-4 flex items-center justify-center">
                                 {isAcquired ? (
-                                  <CheckCircle2 className="text-emerald-500 w-6 h-6" />
+                                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+                                    <CheckCircle2 className="text-emerald-400 w-6 h-6" strokeWidth={3} />
+                                  </motion.div>
                                 ) : (
-                                  <div className="w-6 h-6 rounded-full border-2 border-slate-600 group-hover:border-indigo-400 transition-colors" />
+                                  <div className="w-5 h-5 rounded-full border-2 border-slate-600/50 group-hover:border-indigo-400 transition-colors" />
                                 )}
+                              </div>
+                              <span className={`text-5xl mb-3 transition-transform duration-300 ${isAcquired ? 'grayscale opacity-50' : 'group-hover:scale-110 drop-shadow-2xl'}`}>
+                                {item.emoji}
+                              </span>
+                              <div className="flex flex-col items-center w-full">
+                                <p className={`font-black text-base leading-tight transition-colors mb-2 line-clamp-2 ${isAcquired ? 'text-emerald-400/70 line-through' : 'text-slate-100 group-hover:text-white'}`}>
+                                  {item.item}
+                                </p>
+                                <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full ${isAcquired ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-800 text-slate-400 group-hover:bg-indigo-500/20 group-hover:text-indigo-300'}`}>
+                                  {item.quantity} {item.unit}
+                                </span>
                               </div>
                             </motion.div>
                           );
