@@ -139,30 +139,35 @@ export default function App() {
                               transition={{ duration: 0.2 }}
                               key={itemKey} 
                               onClick={() => toggleItem(category, item.item)}
-                              className={`food-card w-full max-w-sm group ${isAcquired ? 'opacity-50 hover:opacity-80 !bg-emerald-50 !border-emerald-200 shadow-none' : ''}`}
+                              className={`food-card !h-auto w-full max-w-sm group flex-row justify-between gap-4 p-5 ${isAcquired ? 'opacity-50 hover:opacity-80 !bg-emerald-50 !border-emerald-200 shadow-none' : ''}`}
                             >
                               <div className="corner-tr"></div>
                               <div className="corner-bl"></div>
 
-                              <div className="absolute top-4 right-4 flex items-center justify-center z-10 w-6 h-6">
-                                {isAcquired ? (
-                                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
-                                    <CheckCircle2 className="text-emerald-500 w-6 h-6 bg-white rounded-full" strokeWidth={3} />
-                                  </motion.div>
-                                ) : (
-                                  <div className="w-6 h-6 rounded-full border-[3px] border-white/80 bg-white/20 group-hover:bg-white/40 transition-colors shadow-sm" />
-                                )}
-                              </div>
-                              <span className={`text-6xl mb-4 transition-transform duration-300 ${isAcquired ? 'grayscale opacity-70' : 'group-hover:scale-110 group-hover:rotate-3 drop-shadow-xl'}`}>
+                              {/* Emoji */}
+                              <span className={`text-4xl flex-shrink-0 transition-transform duration-300 ${isAcquired ? 'grayscale opacity-70' : 'group-hover:scale-110 drop-shadow-xl'}`}>
                                 {item.emoji}
                               </span>
-                              <div className="flex flex-col items-center justify-center text-center w-full z-10">
-                                <p className={`font-black text-3xl leading-tight transition-colors mb-2 line-clamp-3 text-center drop-shadow-md ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-white'}`}>
+
+                              {/* Name + Quantity */}
+                              <div className="flex flex-col flex-1 text-center items-center justify-center">
+                                <p className={`font-black text-2xl leading-tight drop-shadow-md ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-white'}`}>
                                   {item.item}
                                 </p>
-                                <span className={`text-sm font-black uppercase tracking-widest px-4 py-1.5 rounded-full border shadow-sm text-center drop-shadow-lg ${isAcquired ? 'bg-emerald-200/50 text-emerald-800 border-emerald-300/50' : 'bg-black/20 text-white border-white/40 group-hover:bg-black/30 backdrop-blur-sm'}`}>
+                                <span className={`text-xs font-black uppercase tracking-widest mt-1 px-3 py-0.5 rounded-full border ${isAcquired ? 'bg-emerald-200/50 text-emerald-800 border-emerald-300/50' : 'bg-black/20 text-white border-white/30'}`}>
                                   {item.quantity} {item.unit}
                                 </span>
+                              </div>
+
+                              {/* Checkmark */}
+                              <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 z-10">
+                                {isAcquired ? (
+                                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+                                    <CheckCircle2 className="text-emerald-500 w-8 h-8 bg-white rounded-full" strokeWidth={2.5} />
+                                  </motion.div>
+                                ) : (
+                                  <div className="w-8 h-8 rounded-full border-[3px] border-white/70 bg-white/10 group-hover:bg-white/30 transition-colors shadow-sm" />
+                                )}
                               </div>
                             </motion.div>
                           );

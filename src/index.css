@@ -52,7 +52,7 @@ body {
 
 /* Transparent Cards with White Corners */
 .food-card {
-  @apply relative cursor-pointer flex flex-col items-center justify-center p-6 h-48 rounded-xl transition-all duration-300 text-center;
+  @apply relative cursor-pointer flex flex-row items-center justify-between p-5 rounded-xl transition-all duration-300;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
