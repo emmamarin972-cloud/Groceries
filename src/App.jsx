@@ -117,14 +117,14 @@ export default function App() {
                 if (visibleItems.length === 0) return null;
 
                 return (
-                  <div key={category} className="space-y-4">
-                    <h2 className="text-sm font-extrabold uppercase tracking-widest text-sky-800 flex items-center gap-3">
+                  <div key={category} className="space-y-5 flex flex-col items-center w-full">
+                    <h2 className="text-sm font-extrabold uppercase tracking-widest text-sky-800 flex items-center justify-center gap-3 w-full max-w-sm text-center">
                       <span className="w-8 h-[3px] bg-sky-300 inline-block rounded-full"></span>
-                      {category}
-                      <span className="w-full h-[3px] bg-gradient-to-r from-sky-300 to-transparent inline-block rounded-full"></span>
+                      <span>{category}</span>
+                      <span className="w-8 h-[3px] bg-sky-300 inline-block rounded-full"></span>
                     </h2>
                     
-                    <div className="flex flex-col items-center gap-5 w-full">
+                    <div className="flex flex-col items-center justify-center gap-5 w-full">
                       <AnimatePresence>
                         {visibleItems.map((item, idx) => {
                           const itemKey = `${category}-${item.item}`;
@@ -157,10 +157,10 @@ export default function App() {
                                 {item.emoji}
                               </span>
                               <div className="flex flex-col items-center justify-center text-center w-full z-10">
-                                <p className={`font-black text-lg leading-tight transition-colors mb-2 line-clamp-2 text-center ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-slate-800'}`}>
+                                <p className={`font-black text-xl leading-tight transition-colors mb-2 line-clamp-2 text-center drop-shadow-md ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-white'}`}>
                                   {item.item}
                                 </p>
-                                <span className={`text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full border shadow-sm text-center ${isAcquired ? 'bg-emerald-200/50 text-emerald-700 border-emerald-300/50' : 'bg-white text-sky-600 border-sky-100 group-hover:bg-sky-50'}`}>
+                                <span className={`text-[12px] font-black uppercase tracking-widest px-3 py-1 rounded-full border shadow-sm text-center drop-shadow-lg ${isAcquired ? 'bg-emerald-200/50 text-emerald-800 border-emerald-300/50' : 'bg-black/20 text-white border-white/40 group-hover:bg-black/30 backdrop-blur-sm'}`}>
                                   {item.quantity} {item.unit}
                                 </span>
                               </div>
