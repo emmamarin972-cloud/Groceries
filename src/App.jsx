@@ -124,7 +124,7 @@ export default function App() {
                       <span className="w-full h-[3px] bg-gradient-to-r from-sky-300 to-transparent inline-block rounded-full"></span>
                     </h2>
                     
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="flex flex-col items-center gap-5 w-full">
                       <AnimatePresence>
                         {visibleItems.map((item, idx) => {
                           const itemKey = `${category}-${item.item}`;
@@ -139,7 +139,7 @@ export default function App() {
                               transition={{ duration: 0.2 }}
                               key={itemKey} 
                               onClick={() => toggleItem(category, item.item)}
-                              className={`food-card group ${isAcquired ? 'opacity-50 hover:opacity-80 !bg-emerald-50 !border-emerald-200 shadow-none' : ''}`}
+                              className={`food-card w-full max-w-sm group ${isAcquired ? 'opacity-50 hover:opacity-80 !bg-emerald-50 !border-emerald-200 shadow-none' : ''}`}
                             >
                               <div className="corner-tr"></div>
                               <div className="corner-bl"></div>
