@@ -156,11 +156,11 @@ export default function App() {
                               <span className={`text-6xl mb-4 transition-transform duration-300 ${isAcquired ? 'grayscale opacity-70' : 'group-hover:scale-110 group-hover:rotate-3 drop-shadow-xl'}`}>
                                 {item.emoji}
                               </span>
-                              <div className="flex flex-col items-center w-full z-10">
-                                <p className={`font-black text-lg leading-tight transition-colors mb-2 line-clamp-2 ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-slate-800'}`}>
+                              <div className="flex flex-col items-center justify-center text-center w-full z-10">
+                                <p className={`font-black text-lg leading-tight transition-colors mb-2 line-clamp-2 text-center ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-slate-800'}`}>
                                   {item.item}
                                 </p>
-                                <span className={`text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full border shadow-sm ${isAcquired ? 'bg-emerald-200/50 text-emerald-700 border-emerald-300/50' : 'bg-white text-sky-600 border-sky-100 group-hover:bg-sky-50'}`}>
+                                <span className={`text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full border shadow-sm text-center ${isAcquired ? 'bg-emerald-200/50 text-emerald-700 border-emerald-300/50' : 'bg-white text-sky-600 border-sky-100 group-hover:bg-sky-50'}`}>
                                   {item.quantity} {item.unit}
                                 </span>
                               </div>
