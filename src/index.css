@@ -3,35 +3,114 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  @apply bg-background text-slate-200 antialiased;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0, transparent 50%),
-    radial-gradient(at 50% 0%, rgba(99, 102, 241, 0.05) 0, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.05) 0, transparent 50%);
+  @apply bg-sky-50 text-slate-800 antialiased;
   min-height: 100vh;
 }
 
-.glass {
-  @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
+/* Wavy Background */
+.wavy-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-color: #f0f9ff;
+  background-image: radial-gradient(circle at 15% 50%, rgba(186, 230, 253, 0.4), transparent 50%),
+                    radial-gradient(circle at 85% 30%, rgba(125, 211, 252, 0.3), transparent 50%);
+  overflow: hidden;
 }
 
-.glass-card {
-  @apply glass rounded-[2.5rem] p-6 hover:bg-white/10 transition-all duration-300;
+.wavy-bg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23bae6fd' fill-opacity='0.5' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  pointer-events: none;
 }
 
-/* Custom scrollbar for premium feel */
-::-webkit-scrollbar {
-  width: 8px;
+.wavy-bg::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%237dd3fc' fill-opacity='0.5' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,165.3C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  pointer-events: none;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
+/* Transparent Cards with White Corners */
+.food-card {
+  @apply relative cursor-pointer flex flex-col items-center justify-center p-6 h-48 rounded-xl transition-all duration-300 text-center;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(125, 211, 252, 0.2);
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+.food-card:hover {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 12px 40px rgba(125, 211, 252, 0.4);
+  transform: translateY(-2px);
+}
+
+.food-card:active {
+  transform: scale(0.95);
+}
+
+/* The White Corners Effect */
+.food-card::before, .food-card::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.food-card::before {
+  top: -2px; left: -2px;
+  border-top: 4px solid white;
+  border-left: 4px solid white;
+  border-top-left-radius: 12px;
+}
+
+.food-card::after {
+  bottom: -2px; right: -2px;
+  border-bottom: 4px solid white;
+  border-right: 4px solid white;
+  border-bottom-right-radius: 12px;
+}
+
+/* Inner corners (Top Right, Bottom Left) via span if needed, but 2 is usually enough for style */
+.corner-tr {
+  position: absolute;
+  top: -2px; right: -2px;
+  width: 24px; height: 24px;
+  border-top: 4px solid white;
+  border-right: 4px solid white;
+  border-top-right-radius: 12px;
+  pointer-events: none;
+}
+
+.corner-bl {
+  position: absolute;
+  bottom: -2px; left: -2px;
+  width: 24px; height: 24px;
+  border-bottom: 4px solid white;
+  border-left: 4px solid white;
+  border-bottom-left-radius: 12px;
+  pointer-events: none;
 }

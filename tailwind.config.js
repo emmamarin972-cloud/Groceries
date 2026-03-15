@@ -7,14 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#0a0a0c',
+        background: '#0a0f1c',
+        card: '#1e293b',
         primary: '#3b82f6',
-        secondary: '#6366f1',
-        accent: '#8b5cf6',
-      },
-      backgroundImage: {
-        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%)',
-      },
+        success: '#10b981',
+      }
     },
   },
   plugins: [],

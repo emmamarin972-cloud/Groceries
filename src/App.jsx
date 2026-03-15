@@ -3,7 +3,6 @@ import {
   ShoppingBag, 
   ChefHat, 
   CheckCircle2, 
-  Circle,
   AlertCircle,
   ListTodo
 } from 'lucide-react';
@@ -35,61 +34,54 @@ export default function App() {
   const progressPercent = Math.round((acquiredItems.length / totalItems) * 100);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 selection:bg-indigo-500/30 font-sans pb-32">
-      {/* Dynamic Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/20 blur-[120px] rounded-full mix-blend-screen" />
-        <div className="absolute top-[20%] right-[-10%] w-[30%] h-[50%] bg-fuchsia-600/20 blur-[120px] rounded-full mix-blend-screen" />
-        <div className="absolute bottom-[-20%] left-[20%] w-[50%] h-[40%] bg-blue-600/20 blur-[120px] rounded-full mix-blend-screen" />
-      </div>
+    <div className="min-h-screen text-slate-800 font-sans pb-32 relative selection:bg-sky-200">
+      <div className="wavy-bg"></div>
 
       <div className="max-w-3xl mx-auto px-6 py-10 relative z-10">
         
         {/* Header */}
         <header className="mb-10 flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-[2rem] bg-gradient-to-br from-indigo-500 to-fuchsia-500 p-[2px] mb-6 shadow-2xl shadow-indigo-500/20">
-            <div className="w-full h-full bg-slate-950 rounded-[inherit] flex items-center justify-center">
-              <ShoppingBag className="text-white w-7 h-7" strokeWidth={2.5} />
-            </div>
+          <div className="w-16 h-16 rounded-[1.5rem] bg-white text-sky-500 shadow-xl shadow-sky-200 flex items-center justify-center mb-6">
+            <ShoppingBag className="w-8 h-8" strokeWidth={2.5} />
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 mb-3">
-            Fresh<span className="text-indigo-400 italic">Market</span>
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-800 mb-3 drop-shadow-sm">
+            Fresh<span className="text-sky-500 italic">Market</span>
           </h1>
-          <p className="text-slate-500 text-sm font-medium tracking-[0.2em] uppercase">Meal Prep Grocery Run</p>
+          <p className="text-sky-700 text-sm font-bold tracking-[0.2em] uppercase">Meal Prep Grocery Run</p>
         </header>
 
         {/* Progress Bar */}
-        <div className="mb-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-xl">
+        <div className="mb-8 bg-white/60 backdrop-blur-xl border border-white/80 rounded-3xl p-6 shadow-xl shadow-sky-100">
           <div className="flex justify-between items-end mb-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Your Progress</p>
-              <h2 className="text-2xl font-black text-white">{acquiredItems.length} <span className="text-slate-500 text-lg font-medium">/ {totalItems} items</span></h2>
+              <p className="text-xs font-bold uppercase tracking-widest text-sky-600 mb-1">Your Progress</p>
+              <h2 className="text-2xl font-black text-slate-800">{acquiredItems.length} <span className="text-slate-400 text-lg font-bold">/ {totalItems} items</span></h2>
             </div>
-            <p className="text-sm font-bold text-indigo-400">{progressPercent}%</p>
+            <p className="text-sm font-black text-sky-500">{progressPercent}%</p>
           </div>
-          <div className="h-3 w-full bg-slate-800/50 rounded-full overflow-hidden">
+          <div className="h-4 w-full bg-slate-100 rounded-full overflow-hidden shadow-inner border border-slate-200 p-0.5">
             <motion.div 
               initial={{ width: 0 }}
               animate={{ width: `${progressPercent}%` }}
               transition={{ type: "spring", stiffness: 50, damping: 15 }}
-              className="h-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 rounded-full relative"
+              className="h-full bg-gradient-to-r from-sky-400 to-blue-500 rounded-full relative shadow-sm"
             >
-              <div className="absolute inset-0 bg-white/20" style={{ backgroundImage: 'linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)'}} />
+              <div className="absolute inset-0 bg-white/20" style={{ backgroundImage: 'linear-gradient(45deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent)', backgroundSize: '1rem 1rem'}} />
             </motion.div>
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-3 mb-10 bg-slate-900/50 p-2 rounded-[2rem] border border-white/10 backdrop-blur-md">
+        <div className="flex gap-3 mb-10 bg-white/40 p-2 rounded-[2rem] border border-white/60 backdrop-blur-md shadow-lg shadow-sky-100/50">
           <button 
             onClick={() => setActiveTab('shop')}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl text-xs font-bold tracking-wider transition-all duration-300 ${activeTab === 'shop' ? 'bg-indigo-500 text-white shadow-lg shadow-indigo-500/25' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl text-xs font-bold tracking-wider transition-all duration-300 ${activeTab === 'shop' ? 'bg-sky-500 text-white shadow-md shadow-sky-300' : 'text-sky-800 hover:bg-white/60'}`}
           >
             <ListTodo size={16} /> Shopping List
           </button>
           <button 
             onClick={() => setActiveTab('prep')}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl text-xs font-bold tracking-wider transition-all duration-300 ${activeTab === 'prep' ? 'bg-fuchsia-500 text-white shadow-lg shadow-fuchsia-500/25' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+            className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-2xl text-xs font-bold tracking-wider transition-all duration-300 ${activeTab === 'prep' ? 'bg-blue-500 text-white shadow-md shadow-blue-300' : 'text-sky-800 hover:bg-white/60'}`}
           >
             <ChefHat size={16} /> Prep Steps
           </button>
@@ -100,7 +92,7 @@ export default function App() {
           <div className="mb-6 flex justify-end">
             <button
               onClick={() => setShowMissingOnly(!showMissingOnly)}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${showMissingOnly ? 'bg-rose-500/10 border-rose-500/50 text-rose-400' : 'bg-white/5 border-white/10 text-slate-400 hover:bg-white/10'}`}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border shadow-sm ${showMissingOnly ? 'bg-rose-100 border-rose-300 text-rose-600' : 'bg-white/60 border-white/80 text-sky-700 hover:bg-white'}`}
             >
               <AlertCircle size={14} /> 
               {showMissingOnly ? 'Show All Items' : 'Show Missing Only'}
@@ -126,10 +118,10 @@ export default function App() {
 
                 return (
                   <div key={category} className="space-y-4">
-                    <h2 className="text-sm font-extrabold uppercase tracking-widest text-white flex items-center gap-3">
-                      <span className="w-8 h-[2px] bg-slate-700/50 inline-block rounded-full"></span>
+                    <h2 className="text-sm font-extrabold uppercase tracking-widest text-sky-800 flex items-center gap-3">
+                      <span className="w-8 h-[3px] bg-sky-300 inline-block rounded-full"></span>
                       {category}
-                      <span className="w-full h-[2px] bg-gradient-to-r from-slate-700/50 to-transparent inline-block rounded-full"></span>
+                      <span className="w-full h-[3px] bg-gradient-to-r from-sky-300 to-transparent inline-block rounded-full"></span>
                     </h2>
                     
                     <div className="grid grid-cols-2 gap-4">
@@ -147,30 +139,28 @@ export default function App() {
                               transition={{ duration: 0.2 }}
                               key={itemKey} 
                               onClick={() => toggleItem(category, item.item)}
-                              className={`
-                                relative cursor-pointer group flex flex-col items-center justify-center p-6 h-48 rounded-[2rem] border transition-all duration-300 text-center
-                                ${isAcquired 
-                                  ? 'bg-emerald-500/10 border-emerald-500/30 opacity-70 hover:opacity-100' 
-                                  : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-indigo-500/50 shadow-lg hover:shadow-indigo-500/20 active:scale-95'}
-                              `}
+                              className={`food-card group ${isAcquired ? 'opacity-50 hover:opacity-80 !bg-emerald-50 !border-emerald-200 shadow-none' : ''}`}
                             >
-                              <div className="absolute top-4 right-4 flex items-center justify-center">
+                              <div className="corner-tr"></div>
+                              <div className="corner-bl"></div>
+
+                              <div className="absolute top-4 right-4 flex items-center justify-center z-10 w-6 h-6">
                                 {isAcquired ? (
                                   <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
-                                    <CheckCircle2 className="text-emerald-400 w-6 h-6" strokeWidth={3} />
+                                    <CheckCircle2 className="text-emerald-500 w-6 h-6 bg-white rounded-full" strokeWidth={3} />
                                   </motion.div>
                                 ) : (
-                                  <div className="w-5 h-5 rounded-full border-2 border-slate-600/50 group-hover:border-indigo-400 transition-colors" />
+                                  <div className="w-6 h-6 rounded-full border-[3px] border-white/80 bg-white/20 group-hover:bg-white/40 transition-colors shadow-sm" />
                                 )}
                               </div>
-                              <span className={`text-5xl mb-3 transition-transform duration-300 ${isAcquired ? 'grayscale opacity-50' : 'group-hover:scale-110 drop-shadow-2xl'}`}>
+                              <span className={`text-6xl mb-4 transition-transform duration-300 ${isAcquired ? 'grayscale opacity-70' : 'group-hover:scale-110 group-hover:rotate-3 drop-shadow-xl'}`}>
                                 {item.emoji}
                               </span>
-                              <div className="flex flex-col items-center w-full">
-                                <p className={`font-black text-base leading-tight transition-colors mb-2 line-clamp-2 ${isAcquired ? 'text-emerald-400/70 line-through' : 'text-slate-100 group-hover:text-white'}`}>
+                              <div className="flex flex-col items-center w-full z-10">
+                                <p className={`font-black text-lg leading-tight transition-colors mb-2 line-clamp-2 ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-slate-800'}`}>
                                   {item.item}
                                 </p>
-                                <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full ${isAcquired ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-800 text-slate-400 group-hover:bg-indigo-500/20 group-hover:text-indigo-300'}`}>
+                                <span className={`text-[11px] font-black uppercase tracking-widest px-3 py-1 rounded-full border shadow-sm ${isAcquired ? 'bg-emerald-200/50 text-emerald-700 border-emerald-300/50' : 'bg-white text-sky-600 border-sky-100 group-hover:bg-sky-50'}`}>
                                   {item.quantity} {item.unit}
                                 </span>
                               </div>
@@ -184,10 +174,10 @@ export default function App() {
               })}
               
               {showMissingOnly && acquiredItems.length === totalItems && (
-                <div className="text-center py-20">
-                  <span className="text-6xl block mb-6">🎉</span>
-                  <h3 className="text-2xl font-black text-white mb-2">All Done!</h3>
-                  <p className="text-slate-400 font-medium tracking-wide">You have everything you need.</p>
+                <div className="text-center py-20 bg-white/40 backdrop-blur-md rounded-3xl border border-white/60 shadow-xl">
+                  <span className="text-7xl block mb-6 animate-bounce">🎉</span>
+                  <h3 className="text-3xl font-black text-slate-800 mb-2">All Done!</h3>
+                  <p className="text-sky-700 font-bold tracking-wide">You have everything you need.</p>
                 </div>
               )}
             </motion.div>
@@ -200,18 +190,18 @@ export default function App() {
               className="space-y-10"
             >
               {Object.entries(groceryData.preparations).map(([category, steps]) => (
-                <div key={category} className="bg-white/5 border border-white/10 rounded-[2.5rem] p-8 shadow-xl backdrop-blur-md">
-                  <h2 className="text-lg font-black uppercase tracking-widest text-white flex items-center gap-3 mb-8">
-                    <span className="p-2 rounded-xl bg-fuchsia-500/20 text-fuchsia-400"><ChefHat size={20} /></span>
+                <div key={category} className="bg-white/60 border border-white/80 rounded-[2.5rem] p-8 shadow-xl backdrop-blur-md">
+                  <h2 className="text-xl font-black uppercase tracking-widest text-slate-800 flex items-center gap-3 mb-8">
+                    <span className="p-2.5 rounded-xl bg-blue-100 text-blue-500 shadow-sm"><ChefHat size={24} /></span>
                     {category}
                   </h2>
                   <div className="space-y-6">
                     {steps.map((step, idx) => (
                       <div key={idx} className="flex gap-5 items-start">
-                        <div className="w-8 h-8 rounded-2xl bg-slate-800 text-slate-400 flex items-center justify-center font-black text-sm flex-shrink-0 border border-white/5 shadow-inner">
+                        <div className="w-10 h-10 rounded-2xl bg-white text-blue-500 flex items-center justify-center font-black text-base flex-shrink-0 border border-blue-100 shadow-md">
                           {idx + 1}
                         </div>
-                        <p className="text-[15px] font-medium text-slate-300 leading-relaxed pt-1">
+                        <p className="text-[16px] font-bold text-slate-700 leading-relaxed pt-2">
                           {step}
                         </p>
                       </div>
