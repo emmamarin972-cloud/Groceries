@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { 
   ShoppingBag, 
   ChefHat, 
@@ -13,7 +12,6 @@ import {
   Flame,
   Egg,
   Grape,
-  Circle as CircleIcon,
   Target,
   Apple,
   Fish,
@@ -29,7 +27,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { groceryData } from './data/groceryData';
 
 const iconMap = {
-  Beef, Flame, Egg, Grape, Circle: CircleIcon, Target, Apple, Fish, Wheat, Container, Sprout, Milk, Dot, Citrus, Utensils
+  Beef, Flame, Egg, Grape, Circle, Target, Apple, Fish, Wheat, Container, Sprout, Milk, Dot, Citrus, Utensils
 };
 
 const IconComponent = ({ name, className }) => {
