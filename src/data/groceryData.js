@@ -1,42 +1,42 @@
 export const groceryData = {
   "categories": {
     "Desayuno": [
-      { "item": "Pollo", "quantity": 500, "unit": "g", "icon": "Beef" },
-      { "item": "Chorizo", "quantity": 300, "unit": "g", "icon": "Flame" },
-      { "item": "Bacon", "quantity": 200, "unit": "g", "icon": "Flame" },
-      { "item": "Huevos", "quantity": 15, "unit": "units", "icon": "Egg" },
-      { "item": "Claras de huevo", "quantity": 1, "unit": "L", "icon": "Egg" },
-      { "item": "Tortillas integrales", "quantity": 15, "unit": "units", "icon": "Circle" },
-      { "item": "Queso rallado", "quantity": 150, "unit": "g", "icon": "Grape" },
-      { "item": "Cebolla", "quantity": 1, "unit": "units", "icon": "Target" },
-      { "item": "Pimentón", "quantity": 1, "unit": "units", "icon": "Apple" }
+      { "item": "Pollo", "quantity": 500, "unit": "g", "emoji": "🍗" },
+      { "item": "Chorizo", "quantity": 300, "unit": "g", "emoji": "🌭" },
+      { "item": "Bacon", "quantity": 200, "unit": "g", "emoji": "🥓" },
+      { "item": "Huevos", "quantity": 15, "unit": "units", "emoji": "🥚" },
+      { "item": "Claras de huevo", "quantity": 1, "unit": "L", "emoji": "🥚" },
+      { "item": "Tortillas integrales", "quantity": 15, "unit": "units", "emoji": "🫓" },
+      { "item": "Queso rallado", "quantity": 150, "unit": "g", "emoji": "🧀" },
+      { "item": "Cebolla", "quantity": 1, "unit": "units", "emoji": "🧅" },
+      { "item": "Pimentón", "quantity": 1, "unit": "units", "emoji": "🫑" }
     ],
     "Almuerzo": [
-      { "item": "Carne molida", "quantity": 3, "unit": "lb", "icon": "Beef" },
-      { "item": "Pollo", "quantity": 3, "unit": "lb", "icon": "Fish" },
-      { "item": "Tortillas integrales", "quantity": 15, "unit": "units", "icon": "Circle" },
-      { "item": "Arroz crudo", "quantity": 440, "unit": "g", "icon": "Wheat" },
-      { "item": "Frijoles negros", "quantity": 2, "unit": "latas", "icon": "Container" },
-      { "item": "Queso rallado", "quantity": 150, "unit": "g", "icon": "Grape" },
-      { "item": "Paprika", "quantity": 1, "unit": "unit", "icon": "Sprout" },
-      { "item": "Comino", "quantity": 1, "unit": "unit", "icon": "Sprout" },
-      { "item": "Ajo en polvo", "quantity": 1, "unit": "unit", "icon": "Target" }
+      { "item": "Carne molida", "quantity": 3, "unit": "lb", "emoji": "🥩" },
+      { "item": "Pollo", "quantity": 3, "unit": "lb", "emoji": "🍗" },
+      { "item": "Tortillas integrales", "quantity": 15, "unit": "units", "emoji": "🫓" },
+      { "item": "Arroz crudo", "quantity": 440, "unit": "g", "emoji": "🍚" },
+      { "item": "Frijoles negros", "quantity": 2, "unit": "latas", "emoji": "🫘" },
+      { "item": "Queso rallado", "quantity": 150, "unit": "g", "emoji": "🧀" },
+      { "item": "Paprika", "quantity": 1, "unit": "unit", "emoji": "🌶️" },
+      { "item": "Comino", "quantity": 1, "unit": "unit", "emoji": "🌿" },
+      { "item": "Ajo en polvo", "quantity": 1, "unit": "unit", "emoji": "🧄" }
     ],
     "Cena": [
-      { "item": "Yogurt griego", "quantity": 1, "unit": "kg", "icon": "Milk" },
-      { "item": "Semillas de chía", "quantity": 1, "unit": "unit", "icon": "Dot" },
-      { "item": "Bananas", "quantity": 4, "unit": "units", "icon": "Citrus" },
-      { "item": "Guineos", "quantity": 4, "unit": "units", "icon": "Citrus" },
-      { "item": "Avena", "quantity": 1, "unit": "unit", "icon": "Wheat" }
+      { "item": "Yogurt griego", "quantity": 1, "unit": "kg", "emoji": "🥛" },
+      { "item": "Semillas de chía", "quantity": 1, "unit": "unit", "emoji": "🧆" },
+      { "item": "Bananas", "quantity": 4, "unit": "units", "emoji": "🍌" },
+      { "item": "Guineos", "quantity": 4, "unit": "units", "emoji": "🍌" },
+      { "item": "Avena", "quantity": 1, "unit": "unit", "emoji": "🥣" }
     ],
     "Salsas": [
-      { "item": "Tomates", "quantity": 6, "unit": "units", "icon": "Apple" },
-      { "item": "Tomatillos", "quantity": 8, "unit": "units", "icon": "Apple" },
-      { "item": "Cebolla extra", "quantity": 1, "unit": "units", "icon": "Target" },
-      { "item": "Manojo cilantro", "quantity": 1, "unit": "units", "icon": "Sprout" },
-      { "item": "Jalapeños", "quantity": 4, "unit": "units", "icon": "Flame" },
-      { "item": "Lata chipotle en adobo", "quantity": 1, "unit": "units", "icon": "Flame" },
-      { "item": "Limones", "quantity": 2, "unit": "units", "icon": "Citrus" }
+      { "item": "Tomates", "quantity": 6, "unit": "units", "emoji": "🍅" },
+      { "item": "Tomatillos", "quantity": 8, "unit": "units", "emoji": "🍏" },
+      { "item": "Cebolla extra", "quantity": 1, "unit": "units", "emoji": "🧅" },
+      { "item": "Manojo cilantro", "quantity": 1, "unit": "units", "emoji": "🌿" },
+      { "item": "Jalapeños", "quantity": 4, "unit": "units", "emoji": "🌶️" },
+      { "item": "Lata chipotle en adobo", "quantity": 1, "unit": "units", "emoji": "🥫" },
+      { "item": "Limones", "quantity": 2, "unit": "units", "emoji": "🍋" }
     ]
   },
   "preparations": {
