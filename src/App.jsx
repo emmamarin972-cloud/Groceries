@@ -117,7 +117,7 @@ export default function App() {
                 if (visibleItems.length === 0) return null;
 
                 return (
-                  <div key={category} className="space-y-5 flex flex-col items-center w-full">
+                  <div key={category} className="space-y-5 flex flex-col items-center justify-center w-full mx-auto">
                     <h2 className="text-sm font-extrabold uppercase tracking-widest text-sky-800 flex items-center justify-center gap-3 w-full max-w-sm text-center">
                       <span className="w-8 h-[3px] bg-sky-300 inline-block rounded-full"></span>
                       <span>{category}</span>
