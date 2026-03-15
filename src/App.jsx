@@ -157,10 +157,10 @@ export default function App() {
                                 {item.emoji}
                               </span>
                               <div className="flex flex-col items-center justify-center text-center w-full z-10">
-                                <p className={`font-black text-xl leading-tight transition-colors mb-2 line-clamp-2 text-center drop-shadow-md ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-white'}`}>
+                                <p className={`font-black text-3xl leading-tight transition-colors mb-2 line-clamp-3 text-center drop-shadow-md ${isAcquired ? 'text-emerald-700/70 line-through' : 'text-white'}`}>
                                   {item.item}
                                 </p>
-                                <span className={`text-[12px] font-black uppercase tracking-widest px-3 py-1 rounded-full border shadow-sm text-center drop-shadow-lg ${isAcquired ? 'bg-emerald-200/50 text-emerald-800 border-emerald-300/50' : 'bg-black/20 text-white border-white/40 group-hover:bg-black/30 backdrop-blur-sm'}`}>
+                                <span className={`text-sm font-black uppercase tracking-widest px-4 py-1.5 rounded-full border shadow-sm text-center drop-shadow-lg ${isAcquired ? 'bg-emerald-200/50 text-emerald-800 border-emerald-300/50' : 'bg-black/20 text-white border-white/40 group-hover:bg-black/30 backdrop-blur-sm'}`}>
                                   {item.quantity} {item.unit}
                                 </span>
                               </div>
